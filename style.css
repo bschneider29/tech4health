@@ -19,7 +19,7 @@ p{
 }
 
 .banner h2{
-    color: #3E3D3C;
+    color: #d44500;
 }
 
 .banner h4{
@@ -144,15 +144,15 @@ p{
 }
 
 .list-group-item:hover{
-    background-color: #D44500;
-    border-color: #D44500;
+    background-color: #6F777D;
+    border-color: #6f777D;
     color:white;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .list-group-item.active{
-    background-color: #D44500;
-    border-color: #D44500;
+    background-color: #6f777D;
+    border-color: #6f777D;
     color:white;
 }
 
@@ -160,12 +160,15 @@ p{
     margin-top: -55px;
 }
 
+#createbutton{
+    background-color: #D44500;
+    border-color: #D44500;
+}
+
 @keyframes slideacross{
 	0%{position:relative;left:100%;}
 	100%{position:relative; left:0%;}
 }
-
-#info-card{animation:slideacross 1s linear; }
 
 @media screen and (max-width:768px){
     #nav-bar-img{display: none;}
