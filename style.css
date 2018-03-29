@@ -138,9 +138,9 @@ p{
     height:250px;
     background:url('images/projects-banner.jpg');
     background-size:cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
 .list-group-item:hover{
