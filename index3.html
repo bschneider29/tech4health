@@ -9,7 +9,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="comment.js"></script>
 </head>
 <body>
         <nav class="main navbar navbar-expand-lg navbar-light bg-light">
@@ -25,7 +26,7 @@
                         <a id="second-nav" class="nav-item nav-link text-dark" href="index.html">HOME <span class="sr-only">(current)</span></a>
                     <a id="second-nav" class="nav-item nav-link text-dark" href="index2.html">ABOUT</a>
                     <a id="second-nav" class="nav-item nav-link text-dark" href="index3.html">PROJECTS</a>
-                    <a id="second-nav" class="nav-item nav-link text-dark" href="index4.html">DISCUSSIONS</a>
+                    <!-- <a id="second-nav" class="nav-item nav-link text-dark" href="index4.html">DISCUSSIONS</a> -->
                     </div>
                 </div>
         </nav>
@@ -41,27 +42,173 @@
             <section class="project py-lg-4 mt-lg-4 py-md-4 mt-md-4 py-sm-2 mt-sm-2">
                     <h2 class="sr-only">Project Menu</h2>
                 <div id="project-contents" class="container d-flex align-content-center d-flex justify-content-center">
-                        <ul class="list-group col-lg-4 pt-4 pb-sm-3">
-                                <li class="list-group-item">Sample Project 1</li>
-                                <li class="list-group-item active">Sample Project 2</li>
-                                <li class="list-group-item disabled">+ Create a Project</li>
-                        </ul>
-
-                        <div id= "info-card"class="card border-dark mb-5 mt-sm-3 " style="max-width: 30rem;">                   
-                            <div class="card-header">Sample 1 Info</div>
-                            <div class="card-body text-dark">
-                            <h5 class="card-title">About</h5>
-                            <h2 class="sr-only">Project 2 Overview</h2>  
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam veniam voluptatibus maiores
-                                 obcaecati. Corporis adipisci animi pariatur. Nihil atque eligendi animi, ipsa necessitatibus provident laudantium, 
-                                 quisquam numquam, iure ea recusandae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ipsum maxime 
-                                 dicta perspiciatis vitae aliquam quo tenetur veritatis ex temporibus incidunt, provident necessitatibus recusandae
-                                nesciunt dolorem obcaecati, est ducimus illo.</p>
-                            </div>
-                        </div>
+                        <div class="row col-12">
+                                <div class="col-4 py-5">
+                                    <h4>Filter</h4>
+                                  <div class="list-group list-group-flush" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Systems</a>
+                                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Data Analysis</a>
+                                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">QA Testing</a>
+                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Mobile App</a>
+                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Web App</a>
+                                  </div>
+                                </div>
+                                <div class="col-8 py-5">
+                                  <div class="tab-content" id="nav-tabContent">
+                                    <div class="tab-pane fade" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+                                            <div id="accordion">
+                                                      <div class="card">
+                                                            <div class="card-header" id="headingOne">
+                                                              <h5 class="mb-0">
+                                                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-MedicalSystems" aria-expanded="true" aria-controls="collapseOne">
+                                                                  Medical Systems
+                                                                </button>
+                                                              </h5>
+                                                            </div>
+                                                  
+                                                      <div id="collapse-MedicalSystems" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                        <div class="card-body">
+                                                          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.<br><br>
+                                                          <strong>Comments</strong>
+                                                          <ul id="Medical-Systems-comment-lists">
+                                                            <li>
+                                                                <strong>TestUser1</strong>
+                                                                <p>This is a great project I would love to be a part of!</p>
+                                                            </li>
+                                                          </ul>
+                                                          <br>
+                                                          <strong>Leave a Comment!</strong>
+                                                          
+                                                                <div class="form-group">
+                                                                  <label for="exampleFormControlInput1">Username</label>
+                                                                  <input type="text" id="username" placeholder="Username">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                        <label for="exampleFormControlInput2">Message</label>
+                                                                        <input type="text" id="message" placeholder="Comment">
+                                                                </div>
+                                                                <button onclick="addItem()">Add Comment</button>
+                                                            
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                            </div>  
+                                    </div>
+                                    <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+                                            <div id="accordion">
+                                                    <div class="card">
+                                                          <div class="card-header" id="headingOne">
+                                                            <h5 class="mb-0">
+                                                              <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-ClientData" aria-expanded="true" aria-controls="collapseOne">
+                                                                Client Data
+                                                              </button>
+                                                            </h5>
+                                                          </div>
+                                                
+                                                    <div id="collapse-ClientData" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                      <div class="card-body">
+                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.<br><br>
+                                                        <strong>Comments</strong>
+                                                        <ul id="comment-lists">
+                                                          <li>
+                                                              <strong>TestUser1</strong>
+                                                              <p>This is a great project I would love to be a part of!</p>
+                                                          </li>
+                                                        </ul>
+                                                        <br>
+                                                        <strong>Leave a Comment!</strong>
+                                                        <form>
+                                                              <div class="form-group">
+                                                                <label for="exampleFormControlInput1">Username</label>
+                                                                <input type="email" class="form-control" id="user-comment-new" placeholder="Username">
+                                                              </div>
+                                                              <div class="form-group">
+                                                                      <label for="exampleFormControlInput2">Message</label>
+                                                                      <input type="message" class="form-control" id="message-comment-new" placeholder="Comment">
+                                                              </div>
+                                                              <button id="createbutton" type="submit" class="btn btn-primary mb-2">Submit</button>
+                                                          </form>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="card">
+                                                        <div class="card-header" id="headingOne">
+                                                          <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-EmployeeData" aria-expanded="true" aria-controls="collapseOne">
+                                                              Employee Data
+                                                            </button>
+                                                          </h5>
+                                                        </div>
+                                              
+                                                  <div id="collapse-EmployeeData" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                                    <div class="card-body">
+                                                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.<br><br>
+                                                      <strong>Comments</strong>
+                                                      <ul id="comment-lists">
+                                                      </ul>
+                                                      <br>
+                                                      <strong>Leave a Comment!</strong>
+                                                      <form>
+                                                            <div class="form-group">
+                                                              <label for="exampleFormControlInput1">Username</label>
+                                                              <input type="email" class="form-control" id="user-comment-new" placeholder="Username">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <label for="exampleFormControlInput2">Message</label>
+                                                                    <input type="message" class="form-control" id="message-comment-new" placeholder="Comment">
+                                                            </div>
+                                                            <button id="createbutton" type="submit" class="btn btn-primary mb-2">Submit</button>
+                                                        </form>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                          </div>  
+                                    </div>
+                                    <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">X</div>
+                                    <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">X</div>
+                                  </div>
+                                </div>
+                              </div>
                 </div>
                 <div class="container d-flex align-content-center d-flex justify-content-center">
-                    <button id ="createbutton" type="button" class="btn btn-primary btn-lg btn-block col-lg-9">+ CREATE A PROJECT</button>
+                        <div id="accordion">
+                                <div class="card">
+                                      <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                          <button class="btn btn-link" data-toggle="collapse" data-target="#create-project" aria-expanded="true" aria-controls="collapseOne">
+                                            + Create a Project
+                                          </button>
+                                        </h5>
+                                      </div>
+                            
+                                <div id="create-project" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                  <div class="card-body">
+                                        <div class="form-group">
+                                                <label for="exampleFormControlInput1">Username</label>
+                                                <input type="text" class="form-control" id="Create-User" placeholder="Username">
+                                              </div>
+                                              <div class="form-group">
+                                                  <label for="exampleFormControlInput1">Project Title</label>
+                                                  <input type="text" class="form-control" id="create-title" placeholder="Project Title">
+                                              </div>
+                                              <div class="form-group">
+                                                    <label for="exampleFormControlSelect1">Project Category</label>
+                                                    <select class="form-control" id="create-category">
+                                                      <option>Systems</option>
+                                                      <option>Data Analysis</option>
+                                                      <option>QA Testing</option>
+                                                      <option>Mobile App</option>
+                                                      <option>Web App</option>
+                                                    </select>
+                                                  </div>
+                                              <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Description</label>
+                                                <textarea type="text" class="form-control" id="create-description" rows="3"></textarea>
+                                              </div>
+                                  </div>
+                                </div>
+                              </div>
+                      </div>  
                 </div>
             </section>
         </main>
@@ -74,14 +221,25 @@
                         <a class="navbar-brand" >
                             <img id="footer-image" src="images/air.png" width="100" height="100" class="d-inline-block align-top" alt="">
                         </a>
-                        <a id="footerItem" class="nav-item nav-link text-white" href="mailto:airinitiative@gmail.com"><i class="fas fa-envelope"></i></a>    
-                        <a id="footerItem" class="nav-item nav-link text-white" href="https://www.facebook.com/su.ischool/"><i class="fab fa-facebook"></i> <span class="sr-only">(current)</span></a>
-                        <a id="footerItem" class="nav-item nav-link text-white" href="https://twitter.com/iSchoolSU"><i class="fab fa-twitter"></i></a>
+                        <a id="footerItem" class="nav-item nav-link text-white" href="mailto:tech4health@gmail.com"><i class="fas fa-envelope"></i></a>    
+                        <a id="footerItem" class="nav-item nav-link text-white" href="https://www.facebook.com/"><i class="fab fa-facebook"></i> <span class="sr-only">(current)</span></a>
+                        <a id="footerItem" class="nav-item nav-link text-white" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                         <a id="footerItem" class="nav-item nav-link text-white" href="https://github.com/"><i class="fab fa-github"></i></a>
                         <a id="footerItem" class="nav-item nav-link text-white" href="https://www.reddit.com/"><i class="fab fa-reddit"></i></a>
                 </div>
         </nav>
     </footer>
+    <script>function addItem(){
+            var ul = document.getElementById("Medical-Systems-comment-lists");
+          var candidate = document.getElementById("username");
+          var message = document.getElementById("message")
+          var li = document.createElement("li");
+          var text = document.createElement("p");
+          li.setAttribute('id',candidate.value);
+          li.append(candidate.value + message.value);
+
+          ul.appendChild(li);
+        }</script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

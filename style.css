@@ -143,6 +143,11 @@ p{
         align-items: center;
 }
 
+#comment-lists{
+    text-decoration: none;
+    list-style-type: none;
+}
+
 .list-group-item:hover{
     background-color: #6F777D;
     border-color: #6f777D;
